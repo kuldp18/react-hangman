@@ -1,4 +1,8 @@
-const HangmanDrawing = () => {
+type HangmanDrawingProps = {
+  numberOfGuesses: number;
+};
+
+const HangmanDrawing = ({ numberOfGuesses }: HangmanDrawingProps) => {
   return (
     <div
       className="container"
@@ -6,12 +10,7 @@ const HangmanDrawing = () => {
         position: 'relative',
       }}
     >
-      {HEAD}
-      {BODY}
-      {RIGHT_ARM}
-      {LEFT_ARM}
-      {RIGHT_LEG}
-      {LEFT_LEG}
+      {BODY_PARTS.slice(0, numberOfGuesses)}
       <div
         className="top-vertical-small"
         style={{
@@ -140,5 +139,7 @@ const LEFT_LEG = (
     }}
   />
 );
+
+const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG];
 
 export default HangmanDrawing;
