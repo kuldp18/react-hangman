@@ -1,5 +1,13 @@
+import { useState } from 'react';
+import words from './wordList.json';
+
 function App() {
-  return <h1>hello</h1>;
+  const [wordToGuess, setWordToGuess] = useState(() => {
+    return words[Math.floor(Math.random() * words.length)];
+  });
+
+  const [guessedLetters, setGuessedLetters] = useState<String[]>([]);
+  return <h1>{wordToGuess}</h1>;
 }
 
 export default App;
