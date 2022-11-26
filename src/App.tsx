@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import HangmanDrawing from './components/HangmanDrawing';
+import HangmanWord from './components/HangmanWord';
+import Keyboard from './components/Keyboard';
 import words from './wordList.json';
 
 function App() {
@@ -7,7 +10,32 @@ function App() {
   });
 
   const [guessedLetters, setGuessedLetters] = useState<String[]>([]);
-  return <h1>{wordToGuess}</h1>;
+  return (
+    <div
+      style={{
+        maxWidth: '800px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '2rem',
+        margin: '0 auto',
+        alignItems: 'center',
+      }}
+    >
+      <div
+        className="status"
+        style={{
+          fontSize: '2rem',
+          textAlign: 'center',
+        }}
+      >
+        Lose or Win
+      </div>
+
+      <HangmanDrawing />
+      <HangmanWord />
+      <Keyboard />
+    </div>
+  );
 }
 
 export default App;
