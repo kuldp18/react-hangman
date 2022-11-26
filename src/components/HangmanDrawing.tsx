@@ -5,7 +5,7 @@ type HangmanDrawingProps = {
 const HangmanDrawing = ({ numberOfGuesses }: HangmanDrawingProps) => {
   return (
     <div
-      className="container"
+      className="containerw"
       style={{
         position: 'relative',
       }}
