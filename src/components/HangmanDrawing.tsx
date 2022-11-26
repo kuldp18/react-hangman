@@ -35,7 +35,7 @@ const HangmanDrawing = ({ numberOfGuesses }: HangmanDrawingProps) => {
       <div
         className="top-vertical"
         style={{
-          height: '400px',
+          height: '300px',
           width: '10px',
           background: 'black',
           marginLeft: '115px',

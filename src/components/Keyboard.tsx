@@ -2,6 +2,7 @@ import styles from '../Keyboard.module.css';
 type KeyboardProps = {
   activeLetters: string[];
   inactiveLetters: string[];
+  disabled?: boolean;
   addGuessedLetter: (letter: string) => void;
 };
 
@@ -38,6 +39,7 @@ const Keyboard = ({
   activeLetters,
   inactiveLetters,
   addGuessedLetter,
+  disabled = false,
 }: KeyboardProps) => {
   return (
     <div
@@ -59,7 +61,7 @@ const Keyboard = ({
             ${isInactive ? styles.inactive : ''} 
             `}
             key={key}
-            disabled={isInactive || isActive}
+            disabled={isInactive || isActive || disabled}
           >
             {key}
           </button>
