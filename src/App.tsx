@@ -19,6 +19,7 @@ function App() {
         gap: '2rem',
         margin: '0 auto',
         alignItems: 'center',
+        marginBottom: '5rem',
       }}
     >
       <div
@@ -33,7 +34,13 @@ function App() {
 
       <HangmanDrawing />
       <HangmanWord />
-      <Keyboard />
+      <div
+        style={{
+          alignSelf: 'stretch',
+        }}
+      >
+        <Keyboard />
+      </div>
     </div>
   );
 }
